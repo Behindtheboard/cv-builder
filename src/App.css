@@ -1,12 +1,26 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 
-#root,
+#builder {
+  padding-right: 40px;
+  min-width: 280px;
+  max-width:300px;
+}
+
 #cv {
-  display: flex;
-  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  border: black solid 1px;
+  width: 7.5in;
+  height: 10in;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+#generalDisplay h1 {
+  margin-bottom: 0;
 }

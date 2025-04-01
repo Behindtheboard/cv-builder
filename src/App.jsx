@@ -27,7 +27,20 @@ function App() {
           <Section initSection={experienceSection} />
         </div>
       </div>
-      <div id="cv"></div>
+      <div id="cv">
+        <div id="generalDisplay">
+          <h1>{generalInfo[0].value}</h1>
+          <div>
+            {generalInfo[1].value} | {generalInfo[2].value}
+          </div>
+        </div>
+        <div id="educationDisplay">
+          
+        </div>
+        <div id="experienceDisplay">
+          
+        </div>
+      </div>
     </>
   );
 }

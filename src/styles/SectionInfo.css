@@ -12,5 +12,6 @@
 }
 
 .genInfo {
+  display: flex;
   justify-content: start;
 }

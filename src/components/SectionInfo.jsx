@@ -20,14 +20,16 @@ export default function SectionInfo({ initInfo }) {
 
   if (!edit) {
     return (
-      <div className="genSection">
-        {infos.map((info) => (
-          <div key={info.id} className="genInfo">
-            {info.label} {info.value}
-          </div>
-        ))}
+      <>
+        <div className="genSection">
+          {infos.map((info) => (
+            <div key={info.id} className="genInfo">
+              {info.label} {info.value}
+            </div>
+          ))}
+        </div>
         <button onClick={toggleEdit}>Edit</button>
-      </div>
+      </>
     );
   }
 
@@ -45,7 +47,7 @@ export default function SectionInfo({ initInfo }) {
           </label>
         ))}
       </form>
-      <button onClick={toggleEdit}>Submit</button>
+      <button onClick={toggleEdit}>Save</button>
     </>
   );
 }
