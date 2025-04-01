@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SectionInfo from "./SectionInfo.jsx";
+import "../styles/section.css"
 
 let newID = 0;
 
@@ -22,12 +23,12 @@ export default function Section({ initSection }) {
   return (
     <>
       {sections.map((section) => (
-        <>
+        <div>
           <SectionInfo initInfo={section.sectInfo} key={section.id} />
-          <button onClick={() => handleDelete(section.id)}>Delete</button>
-        </>
+          <button className="deleteButton" onClick={() => handleDelete(section.id)}>Delete</button>
+        </div>
       ))}
-      <button onClick={handleAdd}>Additional</button>
+      <button className="addButton" onClick={handleAdd}>Additional</button>
     </>
   );
 }
