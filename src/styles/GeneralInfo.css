@@ -1,0 +1,16 @@
+.genSection {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+  padding-bottom: 5px;
+}
+
+.genInput {
+  display: flex;
+  justify-content:space-between;
+}
+
+.genInfo {
+  justify-content: start;
+}
