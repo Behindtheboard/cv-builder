@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/GeneralInfo.css";
+import "../styles/SectionInfo.css";
 
 export default function SectionInfo({ initInfo }) {
   const [infos, setInfos] = useState(initInfo);

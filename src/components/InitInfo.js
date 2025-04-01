@@ -7,12 +7,17 @@ export const generalInfo = [
 export const educationInfo = [
   { value: "", type: "text", label: "School: ", id: 0 },
   { value: "", type: "text", label: "Degree: ", id: 1 },
-  { value: "", type: "date", label: "Date: ", id: 2 },
+  { value: "", type: "date", label: "Date Start: ", id: 2 },
+  { value: "", type: "date", label: "Date End: ", id: 3 },
 ];
 
 export const experienceInfo = [
   { value: "", type: "text", label: "Company: ", id: 0 },
   { value: "", type: "text", label: "Job Title: ", id: 1 },
   { value: "", type: "textarea", label: "Responsibility: ", id: 2 },
-  { value: "", type: "date", label: "Date: ", id: 3 },
+  { value: "", type: "date", label: "Date Start: ", id: 3 },
+  { value: "", type: "date", label: "Date End: ", id: 4 },
 ];
+
+export const educationSection = [{ sectInfo: educationInfo, id: 0 }];
+export const experienceSection = [{ sectInfo: experienceInfo, id: 0 }];

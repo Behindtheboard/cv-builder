@@ -1,27 +1,33 @@
 import "./App.css";
+import Section from "./components/Section.jsx";
 import SectionInfo from "./components/SectionInfo.jsx";
-import { generalInfo, educationInfo, experienceInfo } from "./infoBuilder.js";
+import {
+  generalInfo,
+  educationSection,
+  experienceSection,
+} from "./components/InitInfo.js";
 
 function App() {
   return (
     <>
-      <div id="header">
-        <h1>CV Builder</h1>
-      </div>
-      <div id="cv">
+      <div id="builder">
+        <div id="header">
+          <h1>CV Builder</h1>
+        </div>
         <div id="generalInfo">
           <h2>General Information</h2>
           <SectionInfo initInfo={generalInfo} />
         </div>
         <div id="education">
           <h2>Education</h2>
-          <SectionInfo initInfo={educationInfo} />
+          <Section initSection={educationSection} />
         </div>
-        <div id="experience"></div>
-        <h2>Work Experience</h2>
-        <SectionInfo initInfo={experienceInfo} />
+        <div id="experience">
+          <h2>Work Experience</h2>
+          <Section initSection={experienceSection} />
+        </div>
       </div>
-      <div id="footer"></div>
+      <div id="cv"></div>
     </>
   );
 }
