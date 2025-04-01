@@ -6,8 +6,13 @@ let newID = 0;
 export default function Section({ initSection }) {
   const [sections, setSections] = useState(initSection);
 
+  console.log(initSection);
+
   function handleAdd() {
-    setSections([{...sections,  sectInfo: initSection, id: newID++ }]);
+    setSections([
+      ...sections,
+      { sectInfo: initSection[0].sectInfo, id: ++newID },
+    ]);
   }
 
   return (
