@@ -3,11 +3,17 @@ import Section from "./components/Section.jsx";
 import SectionInfo from "./components/SectionInfo.jsx";
 import {
   generalInfo,
+  educationInfo,
+  experienceInfo,
   educationSection,
   experienceSection,
 } from "./components/InitInfo.js";
 
 function App() {
+  const [generalData, setGeneralData] = useState(generalInfo);
+  const [educationData, setEducationData] = useState(educationInfo);
+  const [experienceData, setExperienceData] = useState(experienceInfo);
+
   return (
     <>
       <div id="builder">
@@ -28,18 +34,9 @@ function App() {
         </div>
       </div>
       <div id="cv">
-        <div id="generalDisplay">
-          <h1>{generalInfo[0].value}</h1>
-          <div>
-            {generalInfo[1].value} | {generalInfo[2].value}
-          </div>
-        </div>
-        <div id="educationDisplay">
-          
-        </div>
-        <div id="experienceDisplay">
-          
-        </div>
+        <div id="generalDisplay"></div>
+        <div id="educationDisplay"></div>
+        <div id="experienceDisplay"></div>
       </div>
     </>
   );
