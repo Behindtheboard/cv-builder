@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Section from "./components/Section.jsx";
 import SectionInfo from "./components/SectionInfo.jsx";
@@ -14,6 +15,14 @@ function App() {
   const [educationData, setEducationData] = useState(educationInfo);
   const [experienceData, setExperienceData] = useState(experienceInfo);
 
+  function handleGenChange(id, e) {
+    setGeneralData(
+      generalData.map((data) =>
+        data.id === id ? { ...data, value: e.target.value } : data
+      )
+    );
+  }
+
   return (
     <>
       <div id="builder">
@@ -22,19 +31,22 @@ function App() {
         </div>
         <div id="generalInfo">
           <h2>General Information</h2>
-          <SectionInfo initInfo={generalInfo} />
+          <SectionInfo initInfo={generalData} onChange={handleGenChange} />
         </div>
         <div id="education">
           <h2>Education</h2>
-          <Section initSection={educationSection} />
+          {/* <Section initSection={educationData} /> */}
         </div>
         <div id="experience">
           <h2>Work Experience</h2>
-          <Section initSection={experienceSection} />
+          {/* <Section initSection={experienceData} /> */}
         </div>
       </div>
       <div id="cv">
-        <div id="generalDisplay"></div>
+        <div id="generalDisplay">
+          <h1>{generalData[0].value}</h1>
+          {generalData[1].value} | {generalData[2].value}
+        </div>
         <div id="educationDisplay"></div>
         <div id="experienceDisplay"></div>
       </div>

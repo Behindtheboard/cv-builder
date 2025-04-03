@@ -1,7 +1,7 @@
 export const generalInfo = [
   { value: "Name", type: "text", label: "Name: ", id: 0 },
   { value: "holder@mail.com", type: "email", label: "Email: ", id: 1 },
-  { value: "123-456-7899", type: "number", label: "Phone Number: ", id: 2 },
+  { value: "123-456-7899", type: "tel", label: "Phone Number: ", id: 2 },
 ];
 
 export const educationInfo = [

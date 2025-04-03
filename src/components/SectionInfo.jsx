@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/SectionInfo.css";
 
-export default function SectionInfo({ initInfo }) {
+export default function SectionInfo({ initInfo, onChange }) {
   const [infos, setInfos] = useState(initInfo);
   const [edit, setEdit] = useState(true);
 
@@ -16,6 +16,7 @@ export default function SectionInfo({ initInfo }) {
         info.id === id ? { ...info, value: e.target.value } : info
       )
     );
+    onChange(id, e);
   }
 
   if (!edit) {
