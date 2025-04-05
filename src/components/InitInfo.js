@@ -18,6 +18,8 @@ export const educationInfo = [
 
 export const experienceInfo = [
   { value: "Lumon Industries", type: "text", label: "Company: ", id: 0 },
+  { value: "01/01/2025", type: "date", label: "Date Start: ", id: 3 },
+  { value: "01/01/2025", type: "date", label: "Date End: ", id: 4 },
   { value: "Web Developer", type: "text", label: "Job Title: ", id: 1 },
   {
     value: "Create websites",
@@ -25,8 +27,6 @@ export const experienceInfo = [
     label: "Responsibility: ",
     id: 2,
   },
-  { value: "01/01/2025", type: "date", label: "Date Start: ", id: 3 },
-  { value: "01/01/2025", type: "date", label: "Date End: ", id: 4 },
 ];
 
 export const educationSection = [{ sectInfo: educationInfo, id: 0 }];

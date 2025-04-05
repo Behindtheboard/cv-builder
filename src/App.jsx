@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import Section from "./components/Section.jsx";
-import SectionInfo from "./components/SectionInfo.jsx";
 import EducationDisplay from "./components/EducationDisplay.jsx";
 import ExperienceDisplay from "./components/ExperienceDisplay.jsx";
 import GeneralSection from "./components/GeneralSection.jsx";

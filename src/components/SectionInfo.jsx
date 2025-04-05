@@ -26,11 +26,7 @@ export default function SectionInfo({ initInfo, onChange }) {
           <label key={info.id} className="genInput">
             {info.label}
 
-            {!edit && (
-              <div key={info.id} className="genInfo">
-                {info.value}
-              </div>
-            )}
+            {!edit && <div key={info.id}>{info.value}</div>}
 
             {edit && (
               <input
@@ -42,7 +38,7 @@ export default function SectionInfo({ initInfo, onChange }) {
           </label>
         ))}
       </form>
-      <button onClick={toggleEdit}>{(edit) ? 'Save' : 'Edit'}</button>
+      <button onClick={toggleEdit}>{edit ? "Save" : "Edit"}</button>
     </>
   );
 }
