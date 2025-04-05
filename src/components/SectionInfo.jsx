@@ -5,18 +5,19 @@ export default function SectionInfo({ initInfo, onChange }) {
   const [infos, setInfos] = useState(initInfo);
   const [edit, setEdit] = useState(true);
 
+
   function toggleEdit(e) {
     e.preventDefault();
     setEdit((prev) => !prev);
   }
 
-  function handleInputChange(id, e) {
+  function handleInputChange(infoId, e) {
     setInfos(
       infos.map((info) =>
-        info.id === id ? { ...info, value: e.target.value } : info
+        info.id === infoId ? { ...info, value: e.target.value } : info
       )
     );
-    onChange(id, e);
+    onChange(infoId, e);
   }
 
   if (!edit) {

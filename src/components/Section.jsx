@@ -1,13 +1,11 @@
 import { useState } from "react";
 import SectionInfo from "./SectionInfo.jsx";
-import "../styles/section.css"
+import "../styles/section.css";
 
 let newID = 0;
 
-export default function Section({ initSection }) {
+export default function Section({ initSection, onChange }) {
   const [sections, setSections] = useState(initSection);
-
-  console.log(initSection);
 
   function handleAdd() {
     setSections([
@@ -20,15 +18,29 @@ export default function Section({ initSection }) {
     setSections(sections.filter((section) => section.id !== sectionId));
   }
 
+  function handleChange(infoId, e, sectionId) {
+    onChange(infoId, e.target.value, sectionId)
+  }
+
   return (
     <>
       {sections.map((section) => (
-        <div>
-          <SectionInfo initInfo={section.sectInfo} key={section.id} />
-          <button className="deleteButton" onClick={() => handleDelete(section.id)}>Delete</button>
+        <div key={section.id}>
+          <SectionInfo
+            initInfo={section.sectInfo}
+            onChange={(...args) => handleChange(...args, section.id)}
+          />
+          <button
+            className="deleteButton"
+            onClick={() => handleDelete(section.id)}
+          >
+            Delete
+          </button>
         </div>
       ))}
-      <button className="addButton" onClick={handleAdd}>Additional</button>
+      <button className="addButton" onClick={handleAdd}>
+        Additional
+      </button>
     </>
   );
 }
