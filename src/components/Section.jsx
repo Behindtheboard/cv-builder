@@ -1,6 +1,5 @@
 import { useState } from "react";
 import SectionInfo from "./SectionInfo.jsx";
-import { educationSection } from "./InitInfo.js";
 import "../styles/section.css";
 
 let newID = 0;
@@ -11,11 +10,12 @@ export default function Section({ initSection, onChange }) {
   function handleAdd() {
     setSections([
       ...sections,
-      { sectInfo: educationSection[0].sectInfo, id: ++newID },
+      { sectInfo: initSection[0].sectInfo, id: ++newID },
     ]);
   }
 
   function handleDelete(sectionId) {
+    if (sections.length === 1) return;
     setSections(sections.filter((section) => section.id !== sectionId));
   }
 
