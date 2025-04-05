@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SectionInfo from "./SectionInfo.jsx";
+import { educationSection } from "./InitInfo.js";
 import "../styles/section.css";
 
 let newID = 0;
@@ -10,7 +11,7 @@ export default function Section({ initSection, onChange }) {
   function handleAdd() {
     setSections([
       ...sections,
-      { sectInfo: initSection[0].sectInfo, id: ++newID },
+      { sectInfo: educationSection[0].sectInfo, id: ++newID },
     ]);
   }
 
@@ -19,8 +20,23 @@ export default function Section({ initSection, onChange }) {
   }
 
   function handleChange(infoId, e, sectionId) {
-    onChange(infoId, e.target.value, sectionId)
+    setSections(
+      sections.map((section) => {
+        if (section.id === sectionId) {
+          return {
+            ...section,
+            sectInfo: section.sectInfo.map((info) =>
+              info.id === infoId ? { ...info, value: e.target.value } : info
+            ),
+          };
+        } else {
+          return section;
+        }
+      })
+    );
   }
+
+  onChange(sections);
 
   return (
     <>
