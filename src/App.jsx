@@ -3,6 +3,9 @@ import "./App.css";
 import Section from "./components/Section.jsx";
 import SectionInfo from "./components/SectionInfo.jsx";
 import EducationDisplay from "./components/EducationDisplay.jsx";
+import ExperienceDisplay from "./components/ExperienceDisplay.jsx";
+import GeneralSection from "./components/GeneralSection.jsx";
+import GeneralDisplay from "./components/GeneralDisplay.jsx";
 import {
   generalInfo,
   educationSection,
@@ -12,18 +15,16 @@ import {
 function App() {
   const [generalData, setGeneralData] = useState(generalInfo);
   const [educationData, setEducationData] = useState(educationSection);
-  // const [experienceData, setExperienceData] = useState(experienceInfo);
+  const [experienceData, setExperienceData] = useState(experienceSection);
 
-  function handleGenChange(id, e) {
-    setGeneralData(
-      generalData.map((data) =>
-        data.id === id ? { ...data, value: e.target.value } : data
-      )
-    );
+  function handleGenChange(sectionData) {
+    setGeneralData(sectionData);
   }
-
   function handleEduChange(sectionData) {
     setEducationData(sectionData);
+  }
+  function handleExpChange(sectionData) {
+    setExperienceData(sectionData);
   }
 
   return (
@@ -34,24 +35,21 @@ function App() {
         </div>
         <div id="generalInfo">
           <h2>General Information</h2>
-          {/* <SectionInfo initInfo={generalData} onChange={handleGenChange} /> */}
+          <GeneralSection onChange={handleGenChange} />
+        </div>
+        <div id="experience">
+          <h2>Work Experience</h2>
+          <Section initSection={experienceData} onChange={handleExpChange} />
         </div>
         <div id="education">
           <h2>Education</h2>
           <Section initSection={educationData} onChange={handleEduChange} />
         </div>
-        <div id="experience">
-          <h2>Work Experience</h2>
-          {/* <Section initSection={experienceData} /> */}
-        </div>
       </div>
       <div id="cv">
-        <div id="generalDisplay">
-          <h1>{generalData[0].value}</h1>
-          {generalData[1].value} | {generalData[2].value}
-        </div>
+        <GeneralDisplay data={generalData} />
+        <ExperienceDisplay data={experienceData} />
         <EducationDisplay data={educationData} />
-        <div id="experienceDisplay"></div>
       </div>
     </>
   );

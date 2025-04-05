@@ -5,7 +5,6 @@ export default function SectionInfo({ initInfo, onChange }) {
   const [infos, setInfos] = useState(initInfo);
   const [edit, setEdit] = useState(true);
 
-
   function toggleEdit(e) {
     e.preventDefault();
     setEdit((prev) => !prev);
